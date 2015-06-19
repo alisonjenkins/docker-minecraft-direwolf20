@@ -11,7 +11,7 @@ ExecStart=/usr/sbin/systemd-docker run --rm --name direwolf20 -p 25565:25565 \
           -v /srv/minecraft/agrarianskies2/ops.json:/srv/minecraft/agrarianskies2/ops.json \
           -v /srv/minecraft/agrarianskies2/usercache.json:/srv/agrarianskies2/usercache.json \
           -v /srv/minecraft/agrarianskies2/whitelist.json:/srv/minecraft/whitelist.json \
-          demon012/minecraft-direwolf20:test
+          demon012/minecraft-direwolf20
 # -v /srv/minecraft/agrarianskies2/server.properties:/srv/agrarianskies2/server.properties
 Restart=always
 
