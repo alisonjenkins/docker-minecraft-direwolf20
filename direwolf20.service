@@ -4,13 +4,14 @@ Description=Minecraft Server for Direwolf20 pack.
 [Service]
 Type=simple
 ExecStart=/usr/sbin/systemd-docker run --rm --name direwolf20 -p 25565:25565 \
-          -v /srv/minecraft/direwolf20/world:/srv/minecraft/world demon012/minecraft-direwolf20
-          # -v /srv/minecraft/agrarianskies2/banned-ips.json:/srv/minecraft/banned-ips.json \
-          # -v /srv/minecraft/agrarianskies2/banned-players.json:/srv/agrarianskies2/banned-players.json \
-          # -v /srv/minecraft/agrarianskies2/logs:/srv/agrarianskies2/logs \
-          # -v /srv/minecraft/agrarianskies2/ops.json:/srv/minecraft/agrarianskies2/ops.json \
-          # -v /srv/minecraft/agrarianskies2/usercache.json:/srv/agrarianskies2/usercache.json \
-          # -v /srv/minecraft/agrarianskies2/whitelist.json:/srv/minecraft/whitelist.json \
+          -v /srv/minecraft/direwolf20/world:/srv/minecraft/world
+          -v /srv/minecraft/agrarianskies2/banned-ips.json:/srv/minecraft/banned-ips.json \
+          -v /srv/minecraft/agrarianskies2/banned-players.json:/srv/agrarianskies2/banned-players.json \
+          -v /srv/minecraft/agrarianskies2/logs:/srv/agrarianskies2/logs \
+          -v /srv/minecraft/agrarianskies2/ops.json:/srv/minecraft/agrarianskies2/ops.json \
+          -v /srv/minecraft/agrarianskies2/usercache.json:/srv/agrarianskies2/usercache.json \
+          -v /srv/minecraft/agrarianskies2/whitelist.json:/srv/minecraft/whitelist.json \
+          demon012/minecraft-direwolf20
 # -v /srv/minecraft/agrarianskies2/server.properties:/srv/agrarianskies2/server.properties
 Restart=always
 
