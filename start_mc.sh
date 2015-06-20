@@ -11,6 +11,7 @@ server-port=25565
 level-type=DEFAULT
 enable-rcon=true
 rcon.port=25575
+rcon.password=pass
 level-seed=
 force-gamemode=false
 server-ip=
