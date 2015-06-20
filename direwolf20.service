@@ -4,7 +4,7 @@ Description=Minecraft Server for Direwolf20 pack.
 [Service]
 Type=simple
 ExecStart=/usr/sbin/systemd-docker run --rm --name direwolf20 -p 25565:25565 \
-          -v /srv/minecraft/direwolf20/world:/srv/minecraft/world
+          -v /srv/minecraft/direwolf20/world:/srv/minecraft/world \
           -v /srv/minecraft/direwolf20/banned-ips.json:/srv/minecraft/banned-ips.json \
           -v /srv/minecraft/direwolf20/banned-players.json:/srv/minecraft/banned-players.json \
           -v /srv/minecraft/direwolf20/logs:/srv/minecraft/logs \
