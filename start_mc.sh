@@ -10,6 +10,7 @@ announce-player-achievements=true
 server-port=25565
 level-type=DEFAULT
 enable-rcon=true
+rcon.port=25575
 level-seed=
 force-gamemode=false
 server-ip=
