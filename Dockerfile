@@ -13,8 +13,9 @@ VOLUME /srv/minecraft/world
 VOLUME /backups
 RUN apt-get install -y curl tmux
 RUN cd /srv/minecraft/ && sh ./FTBInstall.sh
-CMD cd /srv/minecraft/ && tmux new-session -d -n minecraft:0 -s minecraft && tmux -q send -t minecraft:minecraft "java -server -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:NewRatio=1 -Xmx8096M -Xms8096M -jar FTBServer-1.7.10-1408.jar nogui" C-m && tmux attach
 ADD mcrcon /usr/bin/mcrcon
+ADD start_mc.sh /usr/bin/start_mc
+CMD /usr/bin/start_mc
 RUN apt-get autoremove -y && \
         # AUTO_ADDED_PACKAGES=`apt-mark showauto` && \
         # apt-get remove --purge -y $AUTO_ADDED_PACKAGES && \
