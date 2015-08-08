@@ -27,6 +27,6 @@ elif sys.argv[1] == 'agrarianskies2':
     download_file(url, destfile)
     unzip_file(destfile)
 elif sys.argv[1] == 'direwolf20':
-    url = 'http://ftb.cursecdn.com/FTB2/modpacks/direwolf20_17/1_4_1/direwolf20_17-server.zip'
+    url = 'http://ftb.cursecdn.com/FTB2/modpacks/direwolf20_17/1_6_1/direwolf20_17-server.zip'
     download_file(url, destfile)
     unzip_file(destfile)
