@@ -3,7 +3,7 @@ Description=Minecraft Server for Direwolf20 pack.
 
 [Service]
 Type=simple
-Environment=MCDIR=/srv/minecraft
+Environment="MCDIR=/srv/minecraft"
 ExecStart=/usr/bin/docker run --rm --name direwolf20 -e MCMEM="3000" -p 25565:25565 \
           -v $MCDIR/world:/srv/minecraft/world \
           -v $MCDIR/banned-ips.json:/srv/minecraft/banned-ips.json \
