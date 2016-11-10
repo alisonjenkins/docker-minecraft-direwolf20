@@ -3,16 +3,17 @@ Description=Minecraft Server for Direwolf20 pack.
 
 [Service]
 Type=simple
+Environment=MCDIR=/srv/minecraft
 ExecStart=/usr/bin/docker run --rm --name direwolf20 -e MCMEM="3000" -p 25565:25565 \
-          -v /srv/minecraft/direwolf20/world:/srv/minecraft/world \
-          -v /srv/minecraft/direwolf20/banned-ips.json:/srv/minecraft/banned-ips.json \
-          -v /srv/minecraft/direwolf20/banned-players.json:/srv/minecraft/banned-players.json \
-          -v /srv/minecraft/direwolf20/logs:/srv/minecraft/logs \
-          -v /srv/minecraft/direwolf20/ops.json:/srv/minecraft/ops.json \
-          -v /srv/minecraft/direwolf20/usercache.json:/srv/minecraft/usercache.json \
-          -v /srv/minecraft/direwolf20/whitelist.json:/srv/minecraft/whitelist.json \
-          -v /srv/minecraft/direwolf20/server.properties:/srv/minecraft/server.properties \
-          -v /srv/minecraft/direwolf20/config/JourneyMapServer:/srv/minecraft/config/JourneyMapServer \
+          -v $MCDIR/world:/srv/minecraft/world \
+          -v $MCDIR/banned-ips.json:/srv/minecraft/banned-ips.json \
+          -v $MCDIR/banned-players.json:/srv/minecraft/banned-players.json \
+          -v $MCDIR/logs:/srv/minecraft/logs \
+          -v $MCDIR/ops.json:/srv/minecraft/ops.json \
+          -v $MCDIR/usercache.json:/srv/minecraft/usercache.json \
+          -v $MCDIR/whitelist.json:/srv/minecraft/whitelist.json \
+          -v $MCDIR/server.properties:/srv/minecraft/server.properties \
+          -v $MCDIR/config/JourneyMapServer:/srv/minecraft/config/JourneyMapServer \
           demon012/minecraft-direwolf20:latest
 Restart=always
 
