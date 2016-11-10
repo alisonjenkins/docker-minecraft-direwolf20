@@ -16,6 +16,7 @@ RUN cd /srv/minecraft/ && sh ./FTBInstall.sh
 ADD mcrcon /usr/bin/mcrcon
 ADD start_mc.sh /usr/bin/start_mc
 CMD /usr/bin/start_mc
+CMD chmod +x /usr/bin/start_mc
 RUN apt-get autoremove -y && \
         # AUTO_ADDED_PACKAGES=`apt-mark showauto` && \
         # apt-get remove --purge -y $AUTO_ADDED_PACKAGES && \
