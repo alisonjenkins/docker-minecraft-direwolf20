@@ -23,4 +23,7 @@ RUN apt-get autoremove -y && \
         # AUTO_ADDED_PACKAGES=`apt-mark showauto` && \
         # apt-get remove --purge -y $AUTO_ADDED_PACKAGES && \
         apt-get clean
+RUN useradd minecraft
+RUN chown -R minecraft:minecraft /srv/minecraft
+USER minecraft
 CMD /usr/bin/start_mc
