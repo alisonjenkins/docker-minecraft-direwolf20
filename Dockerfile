@@ -26,4 +26,4 @@ RUN apt-get autoremove -y && \
 RUN useradd minecraft
 RUN chown -R minecraft:minecraft /srv/minecraft
 USER minecraft
-CMD /usr/bin/start_mc
+CMD cd /srv/minecraft && /usr/bin/start_mc
