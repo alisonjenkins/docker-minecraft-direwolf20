@@ -30,7 +30,7 @@ player-idle-timeout=0
 max-players=60
 spawn-monsters=true
 generate-structures=true
-view-distance=10
+view-distance=16
 motd=Welcome to the Redwood Direwolf20 Server
 ENDCONFIG
 )
