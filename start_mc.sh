@@ -35,6 +35,9 @@ motd=Welcome to the Redwood Direwolf20 Server
 ENDCONFIG
 )
 
+cp -R /srv/minecraft/config.override/* /srv/minecraft/config/
+cp -R /srv/minecraft/mods.override/* /srv/minecraft/mods/
+
 echo "$VAR" > /srv/minecraft/server.properties
 
 cd /srv/minecraft/ && java -server -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:NewRatio=1 -Xmx${MCMEM}M -Xms${MCMEM}M -jar FTBServer-1.7.10-1558.jar nogui
