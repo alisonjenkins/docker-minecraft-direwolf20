@@ -18,7 +18,7 @@ ExecStart=/usr/bin/docker run --rm --user="minecraft:minecraft" --name direwolf2
           -v /srv/minecraft/direwolf20/backups:/srv/minecraft/backups \
           -v /srv/minecraft/direwolf20/mods.override:/srv/minecraft/mods.override \
           -v /srv/minecraft/direwolf20/config.override:/srv/minecraft/config.override \
-          demon012/minecraft-direwolf20:alpine
+          demon012/minecraft-direwolf20:latest
 ExecStop=/usr/bin/docker exec -it direwolf20 /usr/bin/mcrcon -H localhost -p pass stop
 Restart=always
 
