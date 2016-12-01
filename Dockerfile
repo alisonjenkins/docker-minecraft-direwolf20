@@ -1,6 +1,8 @@
 FROM anapsix/alpine-java:8_server-jre
 MAINTAINER Alan Jenkins <alan.james.jenkins@gmail.com>
 
+ENV MCMEM=3000
+
 ADD get_pack.py /usr/bin/get_pack
 ADD start_mc.sh /usr/bin/start_mc
 RUN apk --no-cache add gcc && \
