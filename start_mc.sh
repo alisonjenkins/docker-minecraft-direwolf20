@@ -40,4 +40,4 @@ cp -R /srv/minecraft/mods.override/* /srv/minecraft/mods/
 
 echo "$VAR" > /srv/minecraft/server.properties
 
-cd /srv/minecraft/ && java -server -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:NewRatio=1 -Xmx${MCMEM}M -Xms${MCMEM}M -jar FTBServer-1.7.10-1558.jar nogui
+cd /srv/minecraft/ && java -server -d64 -XX:NewRatio=1 -XX:UseSSE=4 -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:+CMSIncrementalMode -XX:+CMSIncrementalPacing -XX:+UseCMSCompactAtFullCollection -XX:+CMSScavengeBeforeRemark -XX:+UseParNewGC -XX:SurvivorRatio=4 -XX:NewSize=128m -XX:MaxNewSize=128m -XX:+DisableExplicitGC -XX:+AggressiveOpts -XX:MaxGCPauseMillis=50 -XX:+UseLargePages -XX:LargePageSizeInBytes=2m -XX:+UseStringCache -XX:CompileThreshold=500 -XX:+UseFastAccessorMethods -XX:+UseBiasedLocking -XX:+OptimizeStringConcat -Dsun.net.client.defaultConnectTimeout=1000 -Xmx${MCMEM}M -Xms${MCMEM}M -jar FTBServer-1.7.10-1558.jar nogui
