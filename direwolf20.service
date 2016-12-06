@@ -6,19 +6,19 @@ After=docker.service
 [Service]
 Type=simple
 ExecStart=/usr/bin/docker run --rm --user="minecraft:minecraft" --name direwolf20 -e MCMEM="3000" -p 25565:25565 \
-          -v /home/minecraft/direwolf20/world:/srv/minecraft/world \
-          -v /home/minecraft/direwolf20/banned-ips.json:/srv/minecraft/banned-ips.json \
-          -v /home/minecraft/direwolf20/banned-players.json:/srv/minecraft/banned-players.json \
-          -v /home/minecraft/direwolf20/logs:/srv/minecraft/logs \
-          -v /home/minecraft/direwolf20/crash-reports:/srv/minecraft/crash-reports \
-          -v /home/minecraft/direwolf20/ops.json:/srv/minecraft/ops.json \
-          -v /home/minecraft/direwolf20/usercache.json:/srv/minecraft/usercache.json \
-          -v /home/minecraft/direwolf20/whitelist.json:/srv/minecraft/whitelist.json \
-          -v /home/minecraft/direwolf20/server.properties:/srv/minecraft/server.properties \
-          -v /home/minecraft/direwolf20/config/JourneyMapServer:/srv/minecraft/config/JourneyMapServer \
-          -v /home/minecraft/direwolf20/backups:/srv/minecraft/backups \
-          -v /home/minecraft/direwolf20/mods.override:/srv/minecraft/mods.override \
-          -v /home/minecraft/direwolf20/config.override:/srv/minecraft/config.override \
+          -v /srv/minecraft/direwolf20/world:/srv/minecraft/world \
+          -v /srv/minecraft/direwolf20/banned-ips.json:/srv/minecraft/banned-ips.json \
+          -v /srv/minecraft/direwolf20/banned-players.json:/srv/minecraft/banned-players.json \
+          -v /srv/minecraft/direwolf20/logs:/srv/minecraft/logs \
+          -v /srv/minecraft/direwolf20/crash-reports:/srv/minecraft/crash-reports \
+          -v /srv/minecraft/direwolf20/ops.json:/srv/minecraft/ops.json \
+          -v /srv/minecraft/direwolf20/usercache.json:/srv/minecraft/usercache.json \
+          -v /srv/minecraft/direwolf20/whitelist.json:/srv/minecraft/whitelist.json \
+          -v /srv/minecraft/direwolf20/server.properties:/srv/minecraft/server.properties \
+          -v /srv/minecraft/direwolf20/config/JourneyMapServer:/srv/minecraft/config/JourneyMapServer \
+          -v /srv/minecraft/direwolf20/backups:/srv/minecraft/backups \
+          -v /srv/minecraft/direwolf20/mods.override:/srv/minecraft/mods.override \
+          -v /srv/minecraft/direwolf20/config.override:/srv/minecraft/config.override \
           demon012/minecraft-direwolf20:latest
 ExecStop=/usr/bin/docker exec -it direwolf20 /usr/bin/mcrcon -H localhost -p pass stop
 Restart=always
