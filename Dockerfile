@@ -15,9 +15,12 @@ RUN apk --no-cache add gcc && \
     mkdir -p /srv/minecraft && cd /srv/minecraft/ && /usr/bin/get_pack direwolf20 && rm /srv/minecraft/minecraft.zip && rm /usr/bin/get_pack && mkdir /srv/minecraft/world && echo 'eula=true' > /srv/minecraft/eula.txt && cd /srv/minecraft/ && sh ./FTBInstall.sh && \
     chmod +x /usr/bin/start_mc && addgroup -g 995 minecraft && adduser -h /srv/minecraft -S -u 996 -G minecraft minecraft && chown -R minecraft:minecraft /srv/minecraft && \
     apk del --purge git gcc musl-dev && apk del ca-certificates wget python
+
 VOLUME /srv/minecraft/world
-VOLUME /backups
 VOLUME /srv/minecraft/config.override
 VOLUME /srv/minecraft/mods.override
+VOLUME /srv/minecraft/crash-reports
+VOLUME /srv/minecraft/backups
+
 USER minecraft
 CMD cd /srv/minecraft && /usr/bin/start_mc
